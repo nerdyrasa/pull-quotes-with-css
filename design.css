@@ -24,8 +24,8 @@ header h1 {
     text-transform: uppercase;
     position: absolute;
     bottom: -8px;
-    left: 0px;
-    margin: 0px;
+    left: 0;
+    margin: 0;
     font-size: 3em;
     line-height: 48px;
     font-weight: 800;
@@ -35,7 +35,67 @@ article {
     max-width: 800px;
     padding: 10px 30px 20px 30px;
     width: 90%;
-    margin: 0px auto;
+    margin: 0 auto;
+}
+
+blockquote {
+    width: 45%;
+    float: right;
+    margin: 0 26px 100px 75px;
+    padding: 0;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    font-family: 'Georgia', serif;
+    color: #0746bb;
+    position: relative;
+}
+
+blockquote::before {
+    content: '\201c';
+    top: 20px;
+    left: -50px;
+}
+
+blockquote::after {
+    content: '\201d';
+    bottom: -42px;
+}
+
+blockquote::before, blockquote::after {
+    font-size: 5.2em;
+    position: absolute;
+}
+
+blockquote cite {
+    font-size: 0.6em;
+    font-style: normal;
+    display: block;
+    line-height: 16px;
+    color: #888;
+    position: absolute;
+    top: 110%;
+    padding-left: 60px;
+}
+
+blockquote cite a {
+    color: inherit;
+}
+
+blockquote cite a:hover {
+    color: #000;
+}
+
+blockquote cite::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url(images/photo.jpg) no-repeat 0 0;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+
 }
 
 @media screen and (max-width: 550px) {
@@ -51,4 +111,18 @@ article {
         bottom: -5px;
     }
 
+    blockquote {
+        float: none;
+        font-size: 1.3em;
+        width: 70%;
+        margin: 40px auto 100px auto;
+    }
+
+    blockquote::before {
+        top: 16px;
+        left: -40px;
+    }
+    blockquote::after {
+        bottom: -35px;
+    }
 }
